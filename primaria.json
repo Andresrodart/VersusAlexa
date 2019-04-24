@@ -19,11 +19,21 @@
     ],
     "Matematicas":[
             {   
-                "id":"0",
-                "titulo":"Suma",
-                "catedra":"NO AVAIBLE",
+                "titulo":"Multiplicación",
+                "catedra":"Si tenemos operaciones como cinco por doce, podemos hacer primero cinco por diez que es cincuenta y depues sumarle los otros dos cinco",
                 "preguntas-respuesta-expliacion":[
-                    ["Cuanto es 7 por 12","84","Una manera facil es siete por diez es setenta y sumarle los otros dos sietes"],
+                    ["Cuanto es 7 por 12","84",""],
+                    ["Cuanto es 5 por 12","40","Recuerda cinco por diez es cinccuenta y le sumamos los otros tres sietes"],
+                    ["Cuanto es 4 por 12","48","Recuerda siete por diez setenta y le sumamos los otros tres sietes"],
+                ]
+            },
+            {   
+                "titulo":"Trigonometria",
+                "catedra":"Sabias que el triangulo equilatero es el triangulo que tiene los tres lados iguales, el triangulo ",
+                "preguntas-respuesta-expliacion":[
+                    ["Cuanto es el triangulo con los tres lados iguales","Triangulo Equilatero","Buu, recuerda que es el triangulo equilatero "],
+                    ["Cuanto es triangulo con solo dos lados iguales ","Ya casi!, recuerda que es el triangulo isoseles"],
+                    ["Cuanto es triangulo con solo dos lados iguales ","Ya casi!, recuerda que es el triangulo isoseles"],
                 ]
             }
         ]
