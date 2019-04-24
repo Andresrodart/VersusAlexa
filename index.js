@@ -3,7 +3,7 @@
 // session persistence, api calls, and more.
 var nivel; //= require('./somefile.json')
 const Alexa = require('ask-sdk-core');
-const WelcomeDialogs = ['¿Estás aquí para retarme, o estas aquí para recivir lecciones de mamá Alexa?', '¿Acaso tu Kunfu es más fuerte o quieres entrenar?', 'Vaya, veo que hay un retador entre nosotros, ¿estas listo o necesitas ayuda'];
+const WelcomeDialogs = ['¿Estás aquí para retarme, o estas aquí para recivir lecciones de mamá Alexa?', '¿Acaso tu Kunfu es más fuerte, o quieres entrenar?', 'Vaya, veo que hay un retador entre nosotros, ¿estas listo o necesitas ayuda?'];
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
@@ -19,7 +19,8 @@ const LaunchRequestHandler = {
 
 const AprendeIntent = {
     canHandle(handlerInput){
-        return  handlerInput.requestEnvelope.request.type === 'AprendeIntent'
+        return  handlerInput.requestEnvelope.request.type === 'IntentRequest' 
+        && handlerInput.requestEnvelope.request.intent.name === 'AprendeIntent';
     },
     handle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;
@@ -33,7 +34,8 @@ const AprendeIntent = {
 
 const RetoIntent = {
     canHandle(handlerInput){
-        return  handlerInput.requestEnvelope.request.type === 'RetoIntent'
+        return  handlerInput.requestEnvelope.request.type === 'IntentRequest' 
+        && handlerInput.requestEnvelope.request.intent.name === 'RetoIntent';
     },
     handle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;
