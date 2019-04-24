@@ -41,7 +41,10 @@ const RetoIntent = {
     },
     handle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;
-        var tema = request.intent.slots.tema.value;
+        
+        var tema = request.intent.slots.tema.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+        var nivel = request.intent.slots.nivel.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+      
         return handlerInput.responseBuilder
             .speak(tema)
             .reprompt(tema)
