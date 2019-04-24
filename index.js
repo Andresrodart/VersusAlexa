@@ -23,11 +23,10 @@ const AprendeIntent = {
     },
     handle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;
-        var estatura = request.intent.slots.tema.value;
-        var s = 0 
+        var tema = request.intent.slots.tema.value;
         return handlerInput.responseBuilder
-            .speak(estatura)
-            .reprompt(estatura)
+            .speak(tema)
+            .reprompt(tema)
             .getResponse();
     }
 } 
@@ -143,6 +142,7 @@ exports.handler = Alexa.SkillBuilders.custom()
         HelloWorldIntentHandler,
         HelpIntentHandler,
         AprendeIntent,
+        RetoIntent,
         CancelAndStopIntentHandler,
         SessionEndedRequestHandler,
         IntentReflectorHandler) // make sure IntentReflectorHandler is last so it doesn't override your custom intent handlers
