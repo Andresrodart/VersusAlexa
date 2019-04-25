@@ -3,6 +3,7 @@
 // session persistence, api calls, and more.
 var informacion; //= require('./somefile.json')
 var teacher = null;
+var respuestaCorrecta = null;
 const Aprender = require('./aprenderHandler.js');
 const myDocument = require('./main.json');
 const Alexa = require('ask-sdk-core');
@@ -191,6 +192,22 @@ const RetoIntent = {
 	}
 }
 
+const RespuestaMatematicasPrimariaIntent = {
+	canHandle(handlerInput) {
+		return handlerInput.requestEnvelope.request.type === 'IntentRequest'
+			&& handlerInput.requestEnvelope.request.intent.name === 'RespuestaMatematicasPrimariaIntent';
+	},
+	handle(handlerInput) {
+
+		const speechText = 'Epa epa ¿eso que quiere decir?';
+		const request = handlerInput.requestEnvelope.request;
+		
+		return handlerInput.responseBuilder
+			.speak(speechText)
+			.reprompt('continuan las pregutntas')
+			.getResponse();
+	}
+}
 
 const HelloWorldIntentHandler = {
 	canHandle(handlerInput) {
@@ -290,6 +307,7 @@ exports.handler = Alexa.SkillBuilders.custom()
 		AprendeIntent,
 		RetoIntent,
 		ContinuarIntent,
+		RespuestaMatematicasPrimariaIntent,
 		CancelAndStopIntentHandler,
 		SessionEndedRequestHandler,
 		IntentReflectorHandler) // make sure IntentReflectorHandler is last so it doesn't override your custom intent handlers
