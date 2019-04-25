@@ -27,11 +27,11 @@ const AprendeIntent = {
 	handle(handlerInput) {
 		const request = handlerInput.requestEnvelope.request;
 		let myResponse = "Houston hubo un problema";
-				var tema = request.intent.slots.tema.resolutions.resolutionsPerAuthority[0].values[0].value.id;
-				var nivel = request.intent.slots.nivel.resolutions.resolutionsPerAuthority[0].values[0].value.name;
-				informacion = require(`./nivel/${nivel}.json`);
-				teacher = new Aprender(nivel, tema, informacion);
-				myResponse = teacher.maquinaDeEstados();
+		var tema = request.intent.slots.tema.resolutions.resolutionsPerAuthority[0].values[0].value.id;
+		var nivel = request.intent.slots.nivel.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+		informacion = require(`./nivel/${nivel}.json`);
+		teacher = new Aprender(nivel, tema, informacion);
+		myResponse = teacher.maquinaDeEstados();
 		return handlerInput.responseBuilder
 			.speak(myResponse)
 			.reprompt('Quieres saber un poco más de información di continuar o no continuar')
