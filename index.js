@@ -229,6 +229,7 @@
 					.getResponse();
 			}
 			const request = handlerInput.requestEnvelope.request;
+			let meEquivoque = '';
 			let sino
 			try {
 				sino = request.intent.slots.sino.resolutions.resolutionsPerAuthority[0].values[0].value.id;
@@ -239,10 +240,14 @@
 			let number = request.intent.slots.number.value;
 			if(sino && sino === respuestaCorrecta)
 				myResponse = 'Correcto';
-			if(number && number === respuestaCorrecta)
+			if(number && number === respuestaCorrecta){
 				myResponse = 'Correcto';
-			if (myResponse === 'Incorrecto')
+				meEquivoque = 'Violento y con Tokio papá';
+			}
+			if (myResponse === 'Incorrecto'){
 				explicacionFinal.push(explicacion);
+				meEquivoque = TestDialogs[Math.floor(Math.random()*TestDialogs.length)] + ' recuerda ' +  explicacion;
+			}
 			else
 				preguntasCorrectas++;
 			
@@ -268,7 +273,7 @@
 			explicacion = informacion[temaPregunta][randomTema].preguntasrespuestaexpliacion[randomPregunta][2];
 			contador++;
 			return handlerInput.responseBuilder
-				.speak(`<speak> ${TestDialogs[Math.floor(Math.random()*TestDialogs.length)]}. Siguiente pregunta ${pregunta} </speak>`)
+				.speak(`<speak> ${meEquivoque}. Siguiente pregunta ${pregunta} </speak>`)
 				.reprompt('continuan las pregutntas')
 				.getResponse();
 		}
