@@ -206,8 +206,11 @@ const RespuestaMatematicasPrimariaIntent = {
 			&& handlerInput.requestEnvelope.request.intent.name === 'RespuestaMatematicasPrimariaIntent';
 	},
 	handle(handlerInput) {
-		if (contador === 0) 
-			return 'Epa epa ¿eso que quiere decir?';
+		if (contador === 0)
+			return handlerInput.responseBuilder
+				.speak('Epa epa ¿eso que quiere decir? ¿Quieres entrenar o retarme?')
+				.reprompt('¿Quieres entrenar o retarme?')
+				.getResponse();
 		
 		const request = handlerInput.requestEnvelope.request;
 		let myResponse = '';
