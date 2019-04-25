@@ -225,7 +225,7 @@ const RespuestaMatematicasPrimariaIntent = {
 		
 		const request = handlerInput.requestEnvelope.request;
 		let myResponse = 'Incorrecto';
-		let sino = request.intent.slots.sino.value;
+		let sino = request.intent.slots.sino.resolutions.resolutionsPerAuthority[0].values[0].value.id;
 		let number = request.intent.slots.number.value;
 		if(sino && sino === respuestaCorrecta)
 			myResponse = 'Correcto';
