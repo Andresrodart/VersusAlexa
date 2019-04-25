@@ -123,7 +123,7 @@ const ContinuarIntent = {
                     "bodyTemplate7Data": {
                         "type": "object",
                         "objectId": "bt7Sample",
-                        "title": tema,
+                        "title": teacher.tema,
                         "image": {
                             "sources": [
                             {
