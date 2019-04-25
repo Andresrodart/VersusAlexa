@@ -53,8 +53,8 @@
                 "titulo":"Historia de las Matematicas",
                 "catedra":"¡La historia de las matemáticas es maravillosa! ya que están en todas partes. Los egipcios fueron una de las primeras civilizaciones en implementarlas en su día a día. Ahora bien, el otro dia escuche a un grupo de investigadores mexicanos decir que los mayas fueron los primeros en utilizar un sistema numérico con el número cero, que locura.",
                 "preguntasrespuestaexpliacion":[
-                    ["¿Qué civilización utilizó por primera vez el número cero?","Los Mayas","Los mayas son los buenasos recuerdalo"],
-                    ["¿Qué civilización fue la primera en utilizar las matematicas en su día a día?","Los Egipcios","Los egipcios parecen de otro mundo"],
+                    ["¿Qué civilización utilizó por primera vez el número cero?","LosMayas","Los mayas son los buenasos recuerdalo"],
+                    ["¿Qué civilización fue la primera en utilizar las matematicas en su día a día?","LosEgipcios","Los egipcios parecen de otro mundo"],
                     ["¿Las matemáticas estan en talent land?","Si","Recuerdalo, estan en todos lados, hasta en su corazón"]
                 ]
             }

@@ -234,7 +234,7 @@ const RespuestaMatematicasPrimariaIntent = {
 		if (myResponse === 'Incorrecto')
 			explicacionFinal.push(explicacion);
 		return handlerInput.responseBuilder
-			.speak(myResponse)
+			.speak(myResponse + ' ' + respuestaCorrecta)
 			.reprompt('continuan las pregutntas')
 			.getResponse();
 	}
