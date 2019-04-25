@@ -5,7 +5,7 @@ var informacion; //= require('./somefile.json')
 var teacher = null;
 const Aprender = require('./aprenderHandler.js')
 const Alexa = require('ask-sdk-core');
-const WelcomeDialogs = ['¿Estás aquí para retarme, o estas aquí para recivir lecciones de mamá Alexa?', '¿Acaso tu Kunfu es más fuerte, o quieres entrenar?', 'Vaya, veo que hay un retador entre nosotros, ¿estas listo o necesitas ayuda?'];
+const WelcomeDialogs = ['¿Estás aquí para retarme, o estas aquí para recibir lecciones de la maestra Alexa?', '¿Acaso tu Kunfu es más fuerte, o quieres entrenar?', 'Vaya, veo que hay un retador entre nosotros, ¿estas listo o necesitas ayuda?'];
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
@@ -21,7 +21,7 @@ const LaunchRequestHandler = {
 
 const AprendeIntent = {
     canHandle(handlerInput){
-        return  handlerInput.requestEnvelope.request.type === 'IntentRequest' 
+        return  handlerInput.requestEnvelope.request.type === 'IntentRequest'
         && handlerInput.requestEnvelope.request.intent.name === 'AprendeIntent';
     },
     handle(handlerInput) {
@@ -37,11 +37,11 @@ const AprendeIntent = {
             .reprompt('Si quieres continuar con otra pregunta di continuar o no continuar')
             .getResponse();
     }
-} 
+}
 
 const ContinuarIntent = {
     canHandle(handlerInput){
-        return  handlerInput.requestEnvelope.request.type === 'IntentRequest' 
+        return  handlerInput.requestEnvelope.request.type === 'IntentRequest'
         && handlerInput.requestEnvelope.request.intent.name === 'ContinuarIntent';
     },
     handle(handlerInput) {
@@ -62,21 +62,21 @@ const ContinuarIntent = {
 
 const RetoIntent = {
     canHandle(handlerInput){
-        return  handlerInput.requestEnvelope.request.type === 'IntentRequest' 
+        return  handlerInput.requestEnvelope.request.type === 'IntentRequest'
         && handlerInput.requestEnvelope.request.intent.name === 'RetoIntent';
     },
     handle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;
-        
+
         //var tema = request.intent.slots.tema.resolutions.resolutionsPerAuthority[0].values[0].value.name;
         //var nivel = request.intent.slots.nivel.resolutions.resolutionsPerAuthority[0].values[0].value.name;
-      
+
         return handlerInput.responseBuilder
             .speak('aqui me retas')
             .reprompt('aqui me retas')
             .getResponse();
     }
-} 
+}
 
 
 const HelloWorldIntentHandler = {
