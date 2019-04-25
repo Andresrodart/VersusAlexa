@@ -21,7 +21,7 @@ const LaunchRequestHandler = {
 
 const AprendeIntent = {
 	canHandle(handlerInput){
-		return  handlerInput.requestEnvelope.request.type === 'IntentRequest' 
+		return  handlerInput.requestEnvelope.request.type === 'IntentRequest'
 		&& handlerInput.requestEnvelope.request.intent.name === 'AprendeIntent';
 	},
 	handle(handlerInput) {
@@ -37,11 +37,11 @@ const AprendeIntent = {
 			.reprompt('Quieres saber un poco más de información di continuar o no continuar')
 			.getResponse();
 	}
-} 
+}
 
 const ContinuarIntent = {
 	canHandle(handlerInput){
-		return  handlerInput.requestEnvelope.request.type === 'IntentRequest' 
+		return  handlerInput.requestEnvelope.request.type === 'IntentRequest'
 		&& handlerInput.requestEnvelope.request.intent.name === 'ContinuarIntent';
 	},
 	handle(handlerInput) {
@@ -68,21 +68,41 @@ const ContinuarIntent = {
 
 const RetoIntent = {
 	canHandle(handlerInput){
-		return  handlerInput.requestEnvelope.request.type === 'IntentRequest' 
+		return  handlerInput.requestEnvelope.request.type === 'IntentRequest'
 		&& handlerInput.requestEnvelope.request.intent.name === 'RetoIntent';
 	},
 	handle(handlerInput) {
 		const request = handlerInput.requestEnvelope.request;
-		
-		//var tema = request.intent.slots.tema.resolutions.resolutionsPerAuthority[0].values[0].value.name;
-		//var nivel = request.intent.slots.nivel.resolutions.resolutionsPerAuthority[0].values[0].value.name;
-	  
+
+		var tema = request.intent.slots.tema.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+		var nivel = request.intent.slots.nivel.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+
+		informacion = require(`./nivel/primaria.json`);
+		console.log(informacion);
+
+		let texto = "";
+		switch(tema){
+			case "Matemáticas":
+				texto = "Uuuy las Matemáticas son algo difíciles, pero está bien, confio en ti"
+				pregunta1 = request.intent.slots.tema.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+			break;
+			case "Geografia":
+				texto = "Espero que no nos perdamos dentro del Universo"
+			break;
+			case "Historia":
+				texto = "Bien, es hora de viajar en el tiempo"
+			break;
+			default:
+		}
+
+
+
 		return handlerInput.responseBuilder
-			.speak('aqui me retas')
-			.reprompt('aqui me retas')
+			.speak(texto)
+			.reprompt('copio copio')
 			.getResponse();
 	}
-} 
+}
 
 
 const HelloWorldIntentHandler = {
