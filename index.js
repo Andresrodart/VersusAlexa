@@ -178,35 +178,34 @@ const RetoIntent = {
 
 		temaPregunta = request.intent.slots.tema.resolutions.resolutionsPerAuthority[0].values[0].value.id;
 		temaNivel = request.intent.slots.nivel.resolutions.resolutionsPerAuthority[0].values[0].value.id;
-
+		
 		var informacion = require(`./nivel/${temaNivel}.json`);
-
 		var randomTema = Math.floor(Math.random() * 3 );
 		var randomPregunta = Math.floor(Math.random() * 3 );
-
+		
 		var pregunta = informacion[temaPregunta][randomTema].preguntasrespuestaexpliacion[randomPregunta][0];
-		respuestaCorrecta = informacion[temaPregunta][randomTema].preguntasrespuestaexpliacion[randomPregunta][1];
 		explicacion = informacion[temaPregunta][randomTema].preguntasrespuestaexpliacion[randomPregunta][2];
-
+		respuestaCorrecta = informacion[temaPregunta][randomTema].preguntasrespuestaexpliacion[randomPregunta][1];
+		
 		var texto = "";
-
-		switch(tema){
+		
+		switch(temaPregunta){
 			case "Matematicas":
-				texto = "Uuuy las Matemáticas son algo difíciles, pero está bien, confio en ti";
+			texto = "Uuuy las Matemáticas son algo difíciles, pero está bien, confio en ti";
 			break;
-
+			
 			case "Geografia":
-				texto = "Espero que no nos perdamos dentro del Universo"
+			texto = "Espero que no nos perdamos dentro del Universo"
 			break;
-
+			
 			case "Historia":
-				texto = "Bien, es hora de viajar en el tiempo"
+			texto = "Bien, es hora de viajar en el tiempo"
 			break;
-
+			
 			default:
 			break;
 		}
-
+		
 		contador += 1;
 		return handlerInput.responseBuilder
 			.speak(`<speak>${texto} <break time="1s"/> ${pregunta}</speak>`)
