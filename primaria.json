@@ -24,18 +24,18 @@
                 "titulo":"Multiplicacion",
                 "catedra":"Sí tenemos operaciones como cinco por doce, podemos hacer primero cinco por diez que es cincuenta y después sumarle los otros dos cinco",
                 "preguntas-respuesta-explicacion":[
-                    ["¿Cuánto es 7 por 12","84","Recuerda siete por diez es setenta y le sumas cuatro veces siete"],
-                    ["¿Cuánto es 5 por 12","40","Recuerda cinco por diez es cincuenta y le sumamos los otros dos cinco"],
-                    ["¿Cuánto es 4 por 12","48","Recuerda cuatro por diez es cuarenta y le sumamos los otros dos cuatro"],
+                    ["¿Cuánto es 7 por 12?","84","Recuerda siete por diez es setenta y le sumas cuatro veces siete"],
+                    ["¿Cuánto es 5 por 12?","40","Recuerda cinco por diez es cincuenta y le sumamos los otros dos cinco"],
+                    ["¿Cuánto es 4 por 12?","48","Recuerda cuatro por diez es cuarenta y le sumamos los otros dos cuatro"],
                 ]
             },
             {   
                 "titulo":"Trigonometria",
                 "catedra":"Tenemos tres triángulos importantes en la trigonometría que son el triángulo equilátero con sus tres lados iguales, el triangulo isósceles con dos lados iguales y el triángulo rectángulo sin ningún lado igual",
                 "preguntas-respuesta-explicacion":[
-                    ["¿Cuántos lados iguales tiene el triángulo Equilatero","3","Buu, recuerda tiene tres lados"],
-                    ["¿Cuántos lados iguales tiene el triángulo Isoseles","2","Casi!, tiene solo dos"],
-                    ["¿Cuántos lados tiene el triángulo Rectángulo", "Ninguno", "Caíste!, el triángulo rectángulo no tiene ningún lado igual"],
+                    ["¿Cuántos lados iguales tiene el triángulo equilatero?","3","Buu, recuerda tiene tres lados"],
+                    ["¿Cuántos lados iguales tiene el triángulo isoseles?","2","Casi!, tiene solo dos"],
+                    ["¿Cuántos lados tiene el triángulo rectángulo?", "Ninguno", "Caíste!, el triángulo rectángulo no tiene ningún lado igual"],
                 ]
             }
 
