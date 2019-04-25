@@ -3,7 +3,8 @@
 // session persistence, api calls, and more.
 var informacion; //= require('./somefile.json')
 var teacher = null;
-const Aprender = require('./aprenderHandler.js')
+const Aprender = require('./aprenderHandler.js');
+const myDocument = require('./main.json');
 const Alexa = require('ask-sdk-core');
 const WelcomeDialogs = ['¿Estás aquí para retarme, o estas aquí para recibir lecciones de la maestra Alexa?', '¿Acaso tu Kunfu es más fuerte, o quieres entrenar?', 'Vaya, veo que hay un retador entre nosotros, ¿estas listo o necesitas ayuda?'];
 const LaunchRequestHandler = {
@@ -15,6 +16,13 @@ const LaunchRequestHandler = {
 		return handlerInput.responseBuilder
 			.speak(speechText)
 			.reprompt(speechText)
+			.addDirective({
+                type: 'Alexa.Presentation.APL.RenderDocument',
+                token: '[SkillProvidedToken]',
+                version: '1.0',
+                document: myDocument,
+                datasources: {}
+            })
 			.getResponse();
 	}
 };
@@ -26,15 +34,52 @@ const AprendeIntent = {
 	},
 	handle(handlerInput) {
 		const request = handlerInput.requestEnvelope.request;
+		let myImg = "https://s3.amazonaws.com/nutricioninteligente/screen1.png";
 		let myResponse = "Houston hubo un problema";
 				var tema = request.intent.slots.tema.resolutions.resolutionsPerAuthority[0].values[0].value.id;
 				var nivel = request.intent.slots.nivel.resolutions.resolutionsPerAuthority[0].values[0].value.name;
 				informacion = require(`./nivel/${nivel}.json`);
 				teacher = new Aprender(nivel, tema, informacion);
 				myResponse = teacher.maquinaDeEstados();
+		if(tema === 'Matematicas')
+			myImg = "https://4.bp.blogspot.com/-ZIXB-sB1oGQ/WyhWHEXS_dI/AAAAAAAAWEQ/YFaaAFmYy18VfroS59Ha0B4IUJL232xiACLcBGAs/s1600/mejores%2Bcanales%2Byoutube%2Bmatematicas.jpg"
+		else if(tema === 'Geografia')
+			myImg = "https://i.pinimg.com/originals/fa/03/db/fa03db9cf46d6ce78e2867610bcb070e.png";
+		else
+			myImg = "http://sesgo.org/images/benito-juarez-portada.jpg";
 		return handlerInput.responseBuilder
 			.speak(myResponse)
 			.reprompt('Quieres saber un poco más de información di continuar o no continuar')
+			.addDirective({
+                type: 'Alexa.Presentation.APL.RenderDocument',
+                version: '1.0',
+                document: require('./help.json'),
+                datasources: {
+                    "bodyTemplate7Data": {
+                        "type": "object",
+                        "objectId": "bt7Sample",
+                        "title": tema,
+                        "image": {
+                            "sources": [
+                            {
+                                "url": myImg,
+                                "size": "small",
+                                "widthPixels": 0,
+                                "heightPixels": 0
+                            },
+                            {
+                                "url": myImg,
+                                "size": "large",
+                                "widthPixels": 0,
+                                "heightPixels": 0
+                            }
+                            ]
+                        },
+                        "logoUrl": "",
+                        "hintText": "Try, \"Alexa, dime mi peso ideal\""
+                    }
+                }
+            })
 			.getResponse();
 	}
 }
