@@ -5,37 +5,40 @@
             "titulo":"Capitales",
             "catedra":"NO AVAIBLE",
             "preguntas-respuesta-expliacion":[
-                ["Cuanto es 5*4","20","Sumamos 4 veces 5"]
+                ["¿Cuánto es 5*4?","20","Sumamos 4 veces 5"]
             ]
         },
         {
             "id":"1",
-            "titulo":"Revolución mexicana",
+            "titulo":"Revolucion mexicana",
             "catedra":"NO AVAIBLE",
             "preguntas-respuesta-expliacion":[
-                ["Cuanto es 5*4","20","Sumamos 4 veces 5"]
+                ["¿Cuánto es 5*4?","20","Sumamos 4 veces 5"]
             ]
         }
     ],
+    
+    
     "Matematicas":[
             {   
-                "titulo":"Multiplicación",
-                "catedra":"Si tenemos operaciones como cinco por doce, podemos hacer primero cinco por diez que es cincuenta y depues sumarle los otros dos cinco",
-                "preguntas-respuesta-expliacion":[
-                    ["Cuanto es 7 por 12","84","Recuerda siete por diez es setenta y le sumas cuatro veces siete"],
-                    ["Cuanto es 5 por 12","40","Recuerda cinco por diez es cincuenta y le sumamos los otros dos cinco"],
-                    ["Cuanto es 4 por 12","48","Recuerda cuatro por diez es cuarenta y le sumamos los otros dos cuatro"],
+                "titulo":"Multiplicacion",
+                "catedra":"Sí tenemos operaciones como cinco por doce, podemos hacer primero cinco por diez que es cincuenta y después sumarle los otros dos cinco",
+                "preguntas-respuesta-explicacion":[
+                    ["¿Cuánto es 7 por 12","84","Recuerda siete por diez es setenta y le sumas cuatro veces siete"],
+                    ["¿Cuánto es 5 por 12","40","Recuerda cinco por diez es cincuenta y le sumamos los otros dos cinco"],
+                    ["¿Cuánto es 4 por 12","48","Recuerda cuatro por diez es cuarenta y le sumamos los otros dos cuatro"],
                 ]
             },
             {   
                 "titulo":"Trigonometria",
-                "catedra":"Tenemos tres triangulos importantes en la trigonometria que son el triangulo equilatero con sus tres lados iguales, el triangulo isoseles con dos lados iguales y el triangulo rectangulo sin ningun lado igual",
-                "preguntas-respuesta-expliacion":[
-                    ["Cuantos lados iguales tiene el triangulo Equilatero","3","Buu, recuerda tiene tres lados"],
-                    ["Cuantos lados iguales tiene el triangulo Isoseles","2","Casi!, tiene solo dos"],
-                    ["Cuantos lados tiene el triangulo Rectangulo","ninguno","Caiste!, el trinagulo rectangulo no tiene ningun lado igual"],
+                "catedra":"Tenemos tres triángulos importantes en la trigonometría que son el triángulo equilátero con sus tres lados iguales, el triangulo isósceles con dos lados iguales y el triángulo rectángulo sin ningún lado igual",
+                "preguntas-respuesta-explicacion":[
+                    ["¿Cuántos lados iguales tiene el triángulo Equilatero","3","Buu, recuerda tiene tres lados"],
+                    ["¿Cuántos lados iguales tiene el triángulo Isoseles","2","Casi!, tiene solo dos"],
+                    ["¿Cuántos lados tiene el triángulo Rectángulo", "Ninguno", "Caíste!, el triángulo rectángulo no tiene ningún lado igual"],
                 ]
             }
+
         ]
     
 }
