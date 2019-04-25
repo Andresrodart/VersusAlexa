@@ -307,6 +307,7 @@ exports.handler = Alexa.SkillBuilders.custom()
 		AprendeIntent,
 		RetoIntent,
 		ContinuarIntent,
+		RespuestaMatematicasPrimariaIntent,
 		CancelAndStopIntentHandler,
 		SessionEndedRequestHandler,
 		IntentReflectorHandler) // make sure IntentReflectorHandler is last so it doesn't override your custom intent handlers
