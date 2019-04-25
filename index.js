@@ -44,7 +44,7 @@ const AprendeIntent = {
 		if(tema === 'Matematicas')
 			myImg = "https://4.bp.blogspot.com/-ZIXB-sB1oGQ/WyhWHEXS_dI/AAAAAAAAWEQ/YFaaAFmYy18VfroS59Ha0B4IUJL232xiACLcBGAs/s1600/mejores%2Bcanales%2Byoutube%2Bmatematicas.jpg"
 		else if(tema === 'Geografia')
-			myImg = "https://i.pinimg.com/originals/fa/03/db/fa03db9cf46d6ce78e2867610bcb070e.png";
+			myImg = "https://i.pinimg.com/originals/52/83/4f/52834f21d1c9b62f0ef83244a4830b07.png";
 		else
 			myImg = "http://sesgo.org/images/benito-juarez-portada.jpg";
 		return handlerInput.responseBuilder
@@ -76,7 +76,7 @@ const AprendeIntent = {
                             ]
                         },
                         "logoUrl": "",
-                        "hintText": "Try, \"Alexa, dime mi peso ideal\""
+                        "hintText": "Try, \"Continuar\""
                     }
                 }
             })
@@ -92,7 +92,8 @@ const ContinuarIntent = {
 	handle(handlerInput) {
 		const request = handlerInput.requestEnvelope.request;
 		let Qcontinuar = request.intent.slots.continuar.value;
-		let myResponse = 'Hosuton no hizimos nada'
+		let myResponse = 'Hosuton no hizimos nada';
+		let myImg = '';
 	   if(teacher !== null){
 		   if (Qcontinuar.toLowerCase() === 'continuar') {
 				teacher.estado = 'continuar';
@@ -102,11 +103,48 @@ const ContinuarIntent = {
 				myResponse = 'Muy bien padawan hemos terminado por hoy';
 			}
 	   }else{
-			myResponse = 'Sigue';
+			myResponse = 'Aun no tenemos nada pausado para continuar';
 	   }
+	   	if(teacher.tema === 'Matematicas')
+			myImg = "https://4.bp.blogspot.com/-ZIXB-sB1oGQ/WyhWHEXS_dI/AAAAAAAAWEQ/YFaaAFmYy18VfroS59Ha0B4IUJL232xiACLcBGAs/s1600/mejores%2Bcanales%2Byoutube%2Bmatematicas.jpg"
+		else if(teacher.tema === 'Geografia')
+			myImg = "https://i.pinimg.com/originals/52/83/4f/52834f21d1c9b62f0ef83244a4830b07.png";
+		else
+			myImg = "http://sesgo.org/images/benito-juarez-portada.jpg";
+		
 		return handlerInput.responseBuilder
 			.speak(myResponse)
 			.reprompt(myResponse)
+			.addDirective({
+                type: 'Alexa.Presentation.APL.RenderDocument',
+                version: '1.0',
+                document: require('./help.json'),
+                datasources: {
+                    "bodyTemplate7Data": {
+                        "type": "object",
+                        "objectId": "bt7Sample",
+                        "title": tema,
+                        "image": {
+                            "sources": [
+                            {
+                                "url": myImg,
+                                "size": "small",
+                                "widthPixels": 0,
+                                "heightPixels": 0
+                            },
+                            {
+                                "url": myImg,
+                                "size": "large",
+                                "widthPixels": 0,
+                                "heightPixels": 0
+                            }
+                            ]
+                        },
+                        "logoUrl": "",
+                        "hintText": "Try, \"Continuar\""
+                    }
+                }
+            })
 			.getResponse();
 	}
 }
