@@ -1,8 +1,8 @@
 // This sample demonstrates handling intents from an Alexa skill using the Alexa Skills Kit SDK (v2).
 // Please visit https://alexa.design/cookbook for additional examples on implementing slots, dialog management,
 // session persistence, api calls, and more.
-import Aprender from 'AprenderHandler';
 var informacion; //= require('./somefile.json')
+const Aprender = require('./AprenderHandler')
 const Alexa = require('ask-sdk-core');
 const WelcomeDialogs = ['¿Estás aquí para retarme, o estas aquí para recivir lecciones de mamá Alexa?', '¿Acaso tu Kunfu es más fuerte, o quieres entrenar?', 'Vaya, veo que hay un retador entre nosotros, ¿estas listo o necesitas ayuda?'];
 const LaunchRequestHandler = {
@@ -28,9 +28,11 @@ const AprendeIntent = {
         //var tema = request.intent.slots.tema.value;
         var tema = request.intent.slots.tema.resolutions.resolutionsPerAuthority[0].values[0].value.name;
         var nivel = request.intent.slots.nivel.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+        informacion = require(`.nivel/${nivel}.json`);
+        var teacher = new Aprender(nivel, tema, informacion);
         return handlerInput.responseBuilder
-            .speak(tema + ' ' + nivel)
-            .reprompt(tema + ' ' + nivel)
+            .speak(Aprender.maquinaDeEstados())
+            .reprompt(Aprender.maquinaDeEstados())
             .getResponse();
     }
 } 
@@ -42,13 +44,13 @@ const RetoIntent = {
     },
     handle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;
+        
         var tema = request.intent.slots.tema.resolutions.resolutionsPerAuthority[0].values[0].value.name;
         var nivel = request.intent.slots.nivel.resolutions.resolutionsPerAuthority[0].values[0].value.name;
-        informacion = require(`.nivel/${nivel}.json`);
-        var teacher = new Aprender(nivel, tema, informacion);
+      
         return handlerInput.responseBuilder
-            .speak(Aprender.maquinaDeEstados())
-            .reprompt(Aprender.maquinaDeEstados())
+            .speak(tema)
+            .reprompt(tema)
             .getResponse();
     }
 } 
