@@ -1,11 +1,12 @@
 {
     "Geografia":[
         {   
-            "id":"0",
-            "titulo":"Capitales",
-            "catedra":"NO AVAIBLE",
+            "titulo":"Planetas",
+            "catedra":"Listo para viajar años luz en un viaje interestelar para conocer nuestro universo, bueno no necesariamente lo tenemos que hacer para saber que oficialmente tenemos ocho planetas en nuestro sistema solar y que el más grande de ellos es Júpiter, pero no te vayas a confundir con la luna, ya que ella es muy pequeña y no se considera un planeta.",
             "preguntas-respuesta-expliacion":[
-                ["¿Cuánto es 5*4?","20","Sumamos 4 veces 5"]
+                ["¿Cuántos planetas tiene nuestro sistema solar?","8","Creo que si tendremos que hacer el viaje interestelar, recuerda que tenemos ocho"],
+                ["¿Cuál es el planea más grande de nuestro sistema solar?","Júpiter","Recuerda que Júpiter es el más grande, claro, sin contar al Sol"],
+                ["¿La luna se considera un planeta?","No","Pobre de la luna, si fuera un poco más grande tal vez le hubieras atinado"]
             ]
         },
         {
