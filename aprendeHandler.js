@@ -17,7 +17,7 @@ class Aprender {
 					Vamos a empezar <break time="1s"/>.
 					Te contaré sobre <emphasis level="reduced">${this.informacion[this.tema][TemaADar].titulo}</emphasis> <break time="1s"/>.
 					${this.informacion[this.tema][TemaADar].catedra} <break time="1s"/> 
-					¿quisieras continuar con otra lección?
+					Si quieres continuar con otra pregunta di continuar o no continuar
 				</speak>`
 	}
 }

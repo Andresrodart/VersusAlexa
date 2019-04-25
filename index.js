@@ -34,10 +34,31 @@ const AprendeIntent = {
                 myResponse = teacher.maquinaDeEstados();
         return handlerInput.responseBuilder
             .speak(myResponse)
-            .reprompt(myResponse)
+            .reprompt('Si quieres continuar con otra pregunta di continuar o no continuar')
             .getResponse();
     }
 } 
+
+const ContinuarIntent = {
+    canHandle(handlerInput){
+        return  handlerInput.requestEnvelope.request.type === 'IntentRequest' 
+        && handlerInput.requestEnvelope.request.intent.name === 'ContinuarIntent';
+    },
+    handle(handlerInput) {
+        const request = handlerInput.requestEnvelope.request;
+        let myResponse = 'Houston tenemos un problema';
+       if(teacher !== null){
+            var Qcontinuar = request.intent.slots.continuar.resolutions.resolutionsPerAuthority[0].values[0].value.id;
+            myResponse = toString(Qcontinuar);
+       }else{
+           //Sigue preguntando
+       }
+        return handlerInput.responseBuilder
+            .speak(myResponse)
+            .reprompt(myResponse)
+            .getResponse();
+    }
+}
 
 const RetoIntent = {
     canHandle(handlerInput){
@@ -155,6 +176,7 @@ exports.handler = Alexa.SkillBuilders.custom()
         HelpIntentHandler,
         AprendeIntent,
         RetoIntent,
+        ContinuarIntent,
         CancelAndStopIntentHandler,
         SessionEndedRequestHandler,
         IntentReflectorHandler) // make sure IntentReflectorHandler is last so it doesn't override your custom intent handlers
