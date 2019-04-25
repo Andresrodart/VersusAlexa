@@ -224,13 +224,15 @@ const RespuestaMatematicasPrimariaIntent = {
 				.getResponse();
 		
 		const request = handlerInput.requestEnvelope.request;
-		let myResponse = '';
+		let myResponse = 'Incorrecto';
 		let sino = request.intent.slots.sino.value;
 		let number = request.intent.slots.number.value;
-		if(sino)
-			myResponse += sino;
-		if(number)
-			myResponse += number;
+		if(sino && sino === respuestaCorrecta)
+			myResponse = 'Correcto';
+		if(number && number === respuestaCorrecta)
+			myResponse = 'Correcto';
+		if (myResponse === 'Incorrecto')
+			explicacionFinal.push(explicacion);
 		return handlerInput.responseBuilder
 			.speak(myResponse)
 			.reprompt('continuan las pregutntas')
