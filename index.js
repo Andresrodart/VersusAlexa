@@ -160,14 +160,13 @@ const RetoIntent = {
 		var tema = request.intent.slots.tema.resolutions.resolutionsPerAuthority[0].values[0].value.name;
 		var nivel = request.intent.slots.nivel.resolutions.resolutionsPerAuthority[0].values[0].value.name;
 
-		informacion = require(`./nivel/primaria.json`);
-		var pregunta1 = ""
+		var informacion = require(`./nivel/primaria.json`);
+		var pregunta1 = informacion[tema][0].preguntasrespuestaexpliacion[0][0];
 		var texto = "";
 
 		switch(tema){
 			case "Matemáticas":
 				texto = "Uuuy las Matemáticas son algo difíciles, pero está bien, confio en ti";
-				pregunta1 = informacion[tema][0].preguntas-respuesta-expliacion[0][0];
 			break;
 
 			case "Geografia":
