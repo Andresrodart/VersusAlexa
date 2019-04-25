@@ -188,6 +188,7 @@ const RetoIntent = {
 			break;
 
 			default:
+				texto = "EFFF"
 			break;
 		}
 
