@@ -163,9 +163,8 @@ const RetoIntent = {
 		var informacion = require(`./nivel/primaria.json`);
 
 		var randomTema = Math.floor(Math.random() * informacion[tema].length );
-		var randomPregunta = Math.floor(Math.random() * informacion[tema][randomTema].preguntasrespuestaexpliacion[0].length );
 
-		var pregunta1 = informacion[tema][randomTema].preguntasrespuestaexpliacion[0][randomPregunta];
+		var pregunta1 = informacion[tema][randomTema].preguntasrespuestaexpliacion[0][0];
 		var texto = "";
 
 		switch(tema){
