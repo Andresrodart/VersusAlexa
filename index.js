@@ -76,10 +76,24 @@ const RetoIntent = {
 
 		var tema = request.intent.slots.tema.resolutions.resolutionsPerAuthority[0].values[0].value.name;
 		var nivel = request.intent.slots.nivel.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+		let texto = "";
+		switch(tema){
+			case "Matemáticas":
+				texto = "Uy las matematicas son un dificiles"
+			break;
+			case "Geografia":
+				texto = "Esperemos no perdernos dentro del espacio tiempo"
+			break;
+			case "Historia":
+				texto = "Bien, es hora de viajar en el tiempo"
+			break;
+			default:
+		}
+
 
 		return handlerInput.responseBuilder
-			.speak(`Acabas de seleccionar el tema ${tema}`)
-			.reprompt('NO SE QUE ES REPROMT')
+			.speak(texto)
+			.reprompt('NO SE QUE ES REPROMTsadfasd')
 			.getResponse();
 	}
 }
