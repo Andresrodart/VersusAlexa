@@ -7,10 +7,14 @@ var respuestaCorrecta = null;
 var explicacion = null;
 var explicacionFinal = [];
 var contador = 0;
+var preguntasCorrectas = 0;
+var temaPregunta = null;
+var temaNivel = null;
 const Aprender = require('./aprenderHandler.js');
 const myDocument = require('./main.json');
 const Alexa = require('ask-sdk-core');
 const WelcomeDialogs = ["Hola, no te interesa jugar lif of leyends, este es un juego, aaah no te creas, ¿quieres jugar o aprender?",'¿Estás aquí para retarme, o estas aquí para recibir lecciones de la maestra Alexa?', '¿Acaso tu Kunfu es más fuerte, o quieres entrenar?', 'Vaya, veo que hay un retador entre nosotros, ¿estas listo o necesitas ayuda?'];
+const TestDialogs = ["Vaya, esa estuvo difícil, pero las que siguen son peor", "Mira, no te preocupes por esta, tú sigue", "El que nada sabe nada teme, continua igual"];
 const LaunchRequestHandler = {
 	canHandle(handlerInput) {
 		return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
@@ -172,17 +176,17 @@ const RetoIntent = {
 	handle(handlerInput) {
 		const request = handlerInput.requestEnvelope.request;
 
-		var tema = request.intent.slots.tema.resolutions.resolutionsPerAuthority[0].values[0].value.id;
-		var nivel = request.intent.slots.nivel.resolutions.resolutionsPerAuthority[0].values[0].value.id;
+		temaPregunta = request.intent.slots.tema.resolutions.resolutionsPerAuthority[0].values[0].value.id;
+		temaNivel = request.intent.slots.nivel.resolutions.resolutionsPerAuthority[0].values[0].value.id;
 
-		var informacion = require(`./nivel/${nivel}.json`);
+		var informacion = require(`./nivel/${temaNivel}.json`);
 
 		var randomTema = Math.floor(Math.random() * 3 );
 		var randomPregunta = Math.floor(Math.random() * 3 );
 
-		var pregunta = informacion[tema][randomTema].preguntasrespuestaexpliacion[randomPregunta][0];
-		respuestaCorrecta = informacion[tema][randomTema].preguntasrespuestaexpliacion[randomPregunta][1];
-		explicacion = informacion[tema][randomTema].preguntasrespuestaexpliacion[randomPregunta][2];
+		var pregunta = informacion[temaPregunta][randomTema].preguntasrespuestaexpliacion[randomPregunta][0];
+		respuestaCorrecta = informacion[temaPregunta][randomTema].preguntasrespuestaexpliacion[randomPregunta][1];
+		explicacion = informacion[temaPregunta][randomTema].preguntasrespuestaexpliacion[randomPregunta][2];
 
 		var texto = "";
 
@@ -205,7 +209,7 @@ const RetoIntent = {
 
 		contador += 1;
 		return handlerInput.responseBuilder
-			.speak(`<speak>${texto} <break time="2s"/> ${pregunta}</speak>`)
+			.speak(`<speak>${texto} <break time="1s"/> ${pregunta}</speak>`)
 			.reprompt('copio copio')
 			.getResponse();
 	}
@@ -217,12 +221,12 @@ const RespuestaMatematicasPrimariaIntent = {
 			&& handlerInput.requestEnvelope.request.intent.name === 'RespuestaMatematicasPrimariaIntent';
 	},
 	handle(handlerInput) {
-		if (contador === 0)
+		if(contador == 0){
 			return handlerInput.responseBuilder
 				.speak('Epa epa ¿eso que quiere decir? ¿Quieres entrenar o retarme?')
 				.reprompt('¿Quieres entrenar o retarme?')
 				.getResponse();
-		
+		}
 		const request = handlerInput.requestEnvelope.request;
 		let myResponse = 'Incorrecto';
 		let sino = request.intent.slots.sino.resolutions.resolutionsPerAuthority[0].values[0].value.id;
@@ -233,8 +237,31 @@ const RespuestaMatematicasPrimariaIntent = {
 			myResponse = 'Correcto';
 		if (myResponse === 'Incorrecto')
 			explicacionFinal.push(explicacion);
+		else
+			preguntasCorrectas++;
+		
+		if(contador == 6){
+			let explicaciones = ''
+			for (let index = 0; index < explicacionFinal.length; index++) {
+				explicaciones += `<p>${explicacionFinal[index]}. </p>`
+				
+			}
+			return handlerInput.responseBuilder
+			.speak(`<speak> Hemos terminado. Has tenido ${preguntasCorrectas} respuestas correctas. Recuerda ${explicaciones}</speak>`)
+			.reprompt('continuan las pregutntas')
+			.getResponse();
+		}
+		var informacion = require(`./nivel/${temaNivel}.json`);
+
+		var randomTema = Math.floor(Math.random() * 3 );
+		var randomPregunta = Math.floor(Math.random() * 3 );
+
+		var pregunta = informacion[temaPregunta][randomTema].preguntasrespuestaexpliacion[randomPregunta][0];
+		respuestaCorrecta = informacion[temaPregunta][randomTema].preguntasrespuestaexpliacion[randomPregunta][1];
+		explicacion = informacion[temaPregunta][randomTema].preguntasrespuestaexpliacion[randomPregunta][2];
+		contador++;
 		return handlerInput.responseBuilder
-			.speak(myResponse + ' ' + respuestaCorrecta)
+			.speak(`<speak> ${TestDialogs[Math.floor(Math.random()*TestDialogs.length)]}. Siguiente pregunta ${pregunta} </speak>`)
 			.reprompt('continuan las pregutntas')
 			.getResponse();
 	}
