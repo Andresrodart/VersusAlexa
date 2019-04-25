@@ -14,8 +14,8 @@ class Aprender {
 		let TemaADar = Math.floor(Math.random() * this.informacion[this.tema].length);
 		this.temasDados.push(TemaADar);
 		return `<speak> 
-					Vamos a empezar <break time="2s"/>.
-					Te contaré sobre <emphasis level="moderate">${this.informacion[this.tema][TemaADar].titulo}</emphasis>
+					Vamos a empezar <break time="1s"/>.
+					Te contaré sobre <emphasis level="reduced">${this.informacion[this.tema][TemaADar].titulo}</emphasis> <break time="1s"/>.
 					${this.informacion[this.tema][TemaADar].catedra} 
 				</speak>`
 	}

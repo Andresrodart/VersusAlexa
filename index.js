@@ -2,6 +2,7 @@
 // Please visit https://alexa.design/cookbook for additional examples on implementing slots, dialog management,
 // session persistence, api calls, and more.
 var informacion; //= require('./somefile.json')
+var teacher;
 const Aprender = require('./aprenderHandler.js')
 const Alexa = require('ask-sdk-core');
 const WelcomeDialogs = ['¿Estás aquí para retarme, o estas aquí para recivir lecciones de mamá Alexa?', '¿Acaso tu Kunfu es más fuerte, o quieres entrenar?', 'Vaya, veo que hay un retador entre nosotros, ¿estas listo o necesitas ayuda?'];
@@ -25,14 +26,19 @@ const AprendeIntent = {
     },
     handle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;
-        //var tema = request.intent.slots.tema.value;
-        var tema = request.intent.slots.tema.resolutions.resolutionsPerAuthority[0].values[0].value.id;
-        var nivel = request.intent.slots.nivel.resolutions.resolutionsPerAuthority[0].values[0].value.name;
-        informacion = require(`./nivel/${nivel}.json`);
-        var teacher = new Aprender(nivel, tema, informacion);
+        let myResponse = "Houston hubo un problema";
+        if (teacher == null) {
+            var tema = request.intent.slots.tema.resolutions.resolutionsPerAuthority[0].values[0].value.id;
+            var nivel = request.intent.slots.nivel.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+            informacion = require(`./nivel/${nivel}.json`);
+            teacher = new Aprender(nivel, tema, informacion);
+            myResponse = teacher.maquinaDeEstados();
+        } else if ( request.request.intent.slots.continuar){
+            myResponse = 'quiero continuar';
+        }
         return handlerInput.responseBuilder
-            .speak(teacher.maquinaDeEstados())
-            .reprompt(teacher.maquinaDeEstados())
+            .speak(myResponse)
+            .reprompt(myResponse)
             .getResponse();
     }
 } 
