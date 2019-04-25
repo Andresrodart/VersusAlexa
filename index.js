@@ -20,9 +20,8 @@ const LaunchRequestHandler = {
 };
 
 const AprendeIntent = {
-
 	canHandle(handlerInput){
-		return  handlerInput.requestEnvelope.request.type === 'IntentRequest'
+		return  handlerInput.requestEnvelope.request.type === 'IntentRequest' 
 		&& handlerInput.requestEnvelope.request.intent.name === 'AprendeIntent';
 	},
 	handle(handlerInput) {
@@ -38,11 +37,11 @@ const AprendeIntent = {
 			.reprompt('Quieres saber un poco más de información di continuar o no continuar')
 			.getResponse();
 	}
-}
+} 
 
 const ContinuarIntent = {
 	canHandle(handlerInput){
-		return  handlerInput.requestEnvelope.request.type === 'IntentRequest'
+		return  handlerInput.requestEnvelope.request.type === 'IntentRequest' 
 		&& handlerInput.requestEnvelope.request.intent.name === 'ContinuarIntent';
 	},
 	handle(handlerInput) {
@@ -53,6 +52,9 @@ const ContinuarIntent = {
 		   if (Qcontinuar.toLowerCase() === 'continuar') {
 				teacher.estado = 'continuar';
 				myResponse = teacher.maquinaDeEstados();
+			}else{
+				teacher = null;
+				myResponse = 'Muy bien padawan hemos terminado por hoy';
 			}
 	   }else{
 			myResponse = 'Sigue';
@@ -66,80 +68,21 @@ const ContinuarIntent = {
 
 const RetoIntent = {
 	canHandle(handlerInput){
-		return  handlerInput.requestEnvelope.request.type === 'IntentRequest'
+		return  handlerInput.requestEnvelope.request.type === 'IntentRequest' 
 		&& handlerInput.requestEnvelope.request.intent.name === 'RetoIntent';
 	},
 	handle(handlerInput) {
 		const request = handlerInput.requestEnvelope.request;
-
+		
 		//var tema = request.intent.slots.tema.resolutions.resolutionsPerAuthority[0].values[0].value.name;
 		//var nivel = request.intent.slots.nivel.resolutions.resolutionsPerAuthority[0].values[0].value.name;
-
+	  
 		return handlerInput.responseBuilder
 			.speak('aqui me retas')
 			.reprompt('aqui me retas')
 			.getResponse();
 	}
-}
-
-    canHandle(handlerInput){
-        return  handlerInput.requestEnvelope.request.type === 'IntentRequest'
-        && handlerInput.requestEnvelope.request.intent.name === 'AprendeIntent';
-    },
-    handle(handlerInput) {
-        const request = handlerInput.requestEnvelope.request;
-        let myResponse = "Houston hubo un problema";
-                var tema = request.intent.slots.tema.resolutions.resolutionsPerAuthority[0].values[0].value.id;
-                var nivel = request.intent.slots.nivel.resolutions.resolutionsPerAuthority[0].values[0].value.name;
-                informacion = require(`./nivel/${nivel}.json`);
-                teacher = new Aprender(nivel, tema, informacion);
-                myResponse = teacher.maquinaDeEstados();
-        return handlerInput.responseBuilder
-            .speak(myResponse)
-            .reprompt('Si quieres continuar con otra pregunta di continuar o no continuar')
-            .getResponse();
-    }
-}
-
-const ContinuarIntent = {
-    canHandle(handlerInput){
-        return  handlerInput.requestEnvelope.request.type === 'IntentRequest'
-        && handlerInput.requestEnvelope.request.intent.name === 'ContinuarIntent';
-    },
-    handle(handlerInput) {
-        const request = handlerInput.requestEnvelope.request;
-        let myResponse = 'Houston tenemos un problema';
-       if(teacher !== null){
-            var Qcontinuar = request.intent.slots.continuar.resolutions.resolutionsPerAuthority[0].values[0].value.id;
-            myResponse = toString(Qcontinuar);
-       }else{
-           //Sigue preguntando
-       }
-        return handlerInput.responseBuilder
-            .speak(myResponse)
-            .reprompt(myResponse)
-            .getResponse();
-    }
-}
-
-const RetoIntent = {
-    canHandle(handlerInput){
-        return  handlerInput.requestEnvelope.request.type === 'IntentRequest'
-        && handlerInput.requestEnvelope.request.intent.name === 'RetoIntent';
-    },
-    handle(handlerInput) {
-        const request = handlerInput.requestEnvelope.request;
-
-        //var tema = request.intent.slots.tema.resolutions.resolutionsPerAuthority[0].values[0].value.name;
-        //var nivel = request.intent.slots.nivel.resolutions.resolutionsPerAuthority[0].values[0].value.name;
-
-        return handlerInput.responseBuilder
-            .speak('aqui me retas')
-            .reprompt('aqui me retas')
-            .getResponse();
-    }
-}
->>>>>>> 88081fcc537db73c85ae3b76f7bbc732f63f2fab
+} 
 
 
 const HelloWorldIntentHandler = {
