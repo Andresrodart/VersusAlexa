@@ -46,7 +46,7 @@
                 "preguntasrespuestaexpliacion":[
                     ["¿Cuántos lados iguales tiene el triángulo equilatero?","3","Buu, recuerda tiene tres lados"],
                     ["¿Cuántos lados iguales tiene el triángulo isoseles?","2","Casi!, tiene solo dos"],
-                    ["¿Cuántos lados tiene el triángulo rectángulo?", "0", "Caíste!, el triángulo rectángulo no tiene ningún lado igual"]
+                    ["¿Cuántos lados iguales tiene el triángulo rectángulo?", "0", "Caíste!, el triángulo rectángulo no tiene ningún lado igual"]
                 ]
             },
             {

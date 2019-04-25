@@ -13,7 +13,7 @@
 	const Aprender = require('./aprenderHandler.js');
 	const myDocument = require('./main.json');
 	const Alexa = require('ask-sdk-core');
-	const WelcomeDialogs = ["Hola, no te interesa jugar lif of leyends, este es un juego, aaah no te creas, ¿quieres jugar o aprender?",'¿Estás aquí para retarme, o estas aquí para recibir lecciones de la maestra Alexa?', '¿Acaso tu Kunfu es más fuerte, o quieres entrenar?', 'Vaya, veo que hay un retador entre nosotros, ¿estas listo o necesitas ayuda?'];
+	const WelcomeDialogs = ['¿Estás aquí para retarme, o estas aquí para recibir lecciones de la maestra Alexa?', '¿Acaso tu Kunfu es más fuerte, o quieres entrenar?', 'Vaya, veo que hay un retador entre nosotros, ¿estas listo o necesitas ayuda?'];
 	const TestDialogs = ["Vaya, esa estuvo difícil, pero las que siguen son peor", "Mira, no te preocupes por esta, tú sigue", "El que nada sabe nada teme, continua igual"];
 	const LaunchRequestHandler = {
 		canHandle(handlerInput) {
@@ -211,7 +211,7 @@
 			contador += 1;
 			return handlerInput.responseBuilder
 				.speak(`<speak>${texto} <break time="1s"/> ${pregunta}</speak>`)
-				.reprompt('copio copio')
+				.reprompt('Espero una mejor respuesta')
 				.getResponse();
 		}
 	}
@@ -246,7 +246,7 @@
 			}
 			if (myResponse === 'Incorrecto'){
 				explicacionFinal.push(explicacion);
-				meEquivoque = TestDialogs[Math.floor(Math.random()*TestDialogs.length)] + ' recuerda ' +  explicacion;
+				meEquivoque = explicacion;
 			}
 			else
 				preguntasCorrectas++;
@@ -274,7 +274,7 @@
 			contador++;
 			return handlerInput.responseBuilder
 				.speak(`<speak> ${meEquivoque}. Siguiente pregunta ${pregunta} </speak>`)
-				.reprompt('continuan las pregutntas')
+				.reprompt('Espero una merjo respuesta')
 				.getResponse();
 		}
 	}
