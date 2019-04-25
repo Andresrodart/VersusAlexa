@@ -38,7 +38,7 @@ const AprendeIntent = {
                 myResponse = 'quiero continuar';
             }
         } catch (error) {
-            myResponse = "Houston hubo un problema";
+            myResponse = "Houston hubo un erro";
         }
         return handlerInput.responseBuilder
             .speak(myResponse)

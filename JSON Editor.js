@@ -37,7 +37,12 @@
                     "slots": [
                         {
                             "name": "nivel",
-                            "type": "NivelDeEducacion"
+                            "type": "NivelDeEducacion",
+                            "samples": [
+                                "para {nivel}",
+                                "de {nivel}",
+                                "{nivel}"
+                            ]
                         },
                         {
                             "name": "tema",
@@ -57,10 +62,6 @@
                 {
                     "name": "AprendeIntent",
                     "slots": [
-                        {
-                            "name": "continuar",
-                            "type": "Continuar"
-                        },
                         {
                             "name": "tema",
                             "type": "TemasEducativos",
@@ -83,7 +84,6 @@
                         }
                     ],
                     "samples": [
-                        "{continuar}",
                         "{nivel} de {tema}",
                         "{tema}",
                         "Quiero saber de {nivel} {tema}",
@@ -117,6 +117,7 @@
                             "name": {
                                 "value": "primaria",
                                 "synonyms": [
+                                    "primaria",
                                     "basico"
                                 ]
                             }
@@ -164,28 +165,16 @@
                     "name": "Continuar",
                     "values": [
                         {
+                            "id": "siguiente",
                             "name": {
-                                "value": "dale"
-                            }
-                        },
-                        {
-                            "name": {
-                                "value": "adelante"
-                            }
-                        },
-                        {
-                            "name": {
-                                "value": "Sigue"
-                            }
-                        },
-                        {
-                            "name": {
-                                "value": "Si quiero continuar"
-                            }
-                        },
-                        {
-                            "name": {
-                                "value": "Si"
+                                "value": "Si",
+                                "synonyms": [
+                                    "vamos",
+                                    "dale",
+                                    "va",
+                                    "Sí",
+                                    "si"
+                                ]
                             }
                         }
                     ]
@@ -200,13 +189,6 @@
                     "prompts": {},
                     "slots": [
                         {
-                            "name": "continuar",
-                            "type": "Continuar",
-                            "confirmationRequired": false,
-                            "elicitationRequired": false,
-                            "prompts": {}
-                        },
-                        {
                             "name": "tema",
                             "type": "TemasEducativos",
                             "confirmationRequired": false,
@@ -218,10 +200,9 @@
                         {
                             "name": "nivel",
                             "type": "NivelDeEducacion",
-                            "confirmationRequired": true,
+                            "confirmationRequired": false,
                             "elicitationRequired": true,
                             "prompts": {
-                                "confirmation": "Confirm.Slot.44586463393.1168650882148",
                                 "elicitation": "Elicit.Slot.185495927227.394135100489"
                             }
                         }
@@ -236,8 +217,10 @@
                             "name": "nivel",
                             "type": "NivelDeEducacion",
                             "confirmationRequired": false,
-                            "elicitationRequired": false,
-                            "prompts": {}
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.846214191380.1391378279011"
+                            }
                         },
                         {
                             "name": "tema",
@@ -296,6 +279,24 @@
                     {
                         "type": "PlainText",
                         "value": "Perdona, no te entedí. Mejor sólo dime primaria o secundaria"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.154942556435",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Te faltó algo amigo"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.846214191380.1391378279011",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "¿Y de que nivel estaos hablando?"
                     }
                 ]
             }
