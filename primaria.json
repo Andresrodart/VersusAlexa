@@ -22,18 +22,18 @@
                 "titulo":"Multiplicación",
                 "catedra":"Si tenemos operaciones como cinco por doce, podemos hacer primero cinco por diez que es cincuenta y depues sumarle los otros dos cinco",
                 "preguntas-respuesta-expliacion":[
-                    ["Cuanto es 7 por 12","84",""],
-                    ["Cuanto es 5 por 12","40","Recuerda cinco por diez es cinccuenta y le sumamos los otros tres sietes"],
+                    ["Cuanto es 7 por 12","84","Recuerda siete por dies y cuatr"],
+                    ["Cuanto es 5 por 12","40","Recuerda cinco por dies es cinccuenta y le sumamos los otros tres sietes"],
                     ["Cuanto es 4 por 12","48","Recuerda siete por diez setenta y le sumamos los otros tres sietes"],
                 ]
             },
             {   
                 "titulo":"Trigonometria",
-                "catedra":"Sabias que el triangulo equilatero es el triangulo que tiene los tres lados iguales, el triangulo ",
+                "catedra":"Tenemos tres triangulos importantes en la trigonometria que son el triangulo equilatero con sus tres lados iguales, el triangulo isoseles con dos lados iguales y el triangulo rectangulo sin ningun lado igual",
                 "preguntas-respuesta-expliacion":[
-                    ["Cuanto es el triangulo con los tres lados iguales","Triangulo Equilatero","Buu, recuerda que es el triangulo equilatero "],
-                    ["Cuanto es triangulo con solo dos lados iguales ","Ya casi!, recuerda que es el triangulo isoseles"],
-                    ["Cuanto es triangulo con solo dos lados iguales ","Ya casi!, recuerda que es el triangulo isoseles"],
+                    ["Cuantos lados iguales tiene el triangulo Equilatero","3","Buu, recuerda tiene tres lados"],
+                    ["Cuantos lados iguales tiene el triangulo Isoseles","2","Casi!, tiene solo dos"],
+                    ["Cuantos lados tiene el triangulo Rectangulo","ninguno","Caiste!, el trinagulo rectangulo no tiene ningun lado igual"],
                 ]
             }
         ]
