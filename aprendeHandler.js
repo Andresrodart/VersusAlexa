@@ -8,13 +8,15 @@ class Aprender {
 	}
 	maquinaDeEstados(){
 		var response;
-		if (estado = 'inicial')
-			response =  inicial()
+		if (this.estado === 'inicial')
+			return this.inicial();
 	}
 	inicial(){
 		return `<speak> 
 					Vamos a empezar <break time="3s"/>.
-					<emphasis level="strong">really like</emphasis>  
+					<emphasis level="strong">${this.informacion[this.tema].catedra}</emphasis>  
 				</speak>`
 	}
 }
+
+module.exports = Aprender;
