@@ -80,29 +80,27 @@ const RetoIntent = {
 		informacion = require(`./nivel/primaria.json`);
 		var pregunta1 = ""
 		var texto = "";
-		
+
 		switch(tema){
 			case "Matemáticas":
 				texto = "Uuuy las Matemáticas son algo difíciles, pero está bien, confio en ti";
 				pregunta1 = informacion[tema][0].preguntas-respuesta-expliacion[0][0];
 			break;
-			
+
 			case "Geografia":
 				texto = "Espero que no nos perdamos dentro del Universo"
 			break;
-			
+
 			case "Historia":
 				texto = "Bien, es hora de viajar en el tiempo"
 			break;
-			
+
 			default:
 			break;
 		}
 
-
-
 		return handlerInput.responseBuilder
-			.speak(texto)
+			.speak(pregunta1)
 			.reprompt('copio copio')
 			.getResponse();
 	}
