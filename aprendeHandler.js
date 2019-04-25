@@ -37,7 +37,7 @@ class Aprender {
 			let TemaADar = Math.floor(Math.random() * this.informacionLen);
 			let myResponse = `<speak> 
 						Siguiente tema padawan <break time="1s"/>.
-						Te contaré sobre <emphasis level="reduced">${this.informacion[this.tema][TemaADar].titulo}</emphasis> <break time="1s"/>.
+						Hablaré sobre <emphasis level="reduced">${this.informacion[this.tema][TemaADar].titulo}</emphasis> <break time="1s"/>.
 						${this.informacion[this.tema][TemaADar].catedra}. <break time="1s"/> 
 						Quieres saber un poco más de información di continuar o no continuar
 					</speak>`;
