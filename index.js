@@ -4,6 +4,8 @@
 var informacion; //= require('./somefile.json')
 var teacher = null;
 var respuestaCorrecta = null;
+var explicacion = null;
+var contador = 0;
 const Aprender = require('./aprenderHandler.js');
 const myDocument = require('./main.json');
 const Alexa = require('ask-sdk-core');
@@ -166,7 +168,10 @@ const RetoIntent = {
 		var randomTema = Math.floor(Math.random() * 3 );
 		var randomPregunta = Math.floor(Math.random() * 3 );
 
-		var pregunta1 = informacion[tema][randomTema].preguntasrespuestaexpliacion[randomPregunta][0];
+		var pregunta = informacion[tema][randomTema].preguntasrespuestaexpliacion[randomPregunta][0];
+		respuestaCorrecta = informacion[tema][randomTema].preguntasrespuestaexpliacion[randomPregunta][1];
+		explicacion = informacion[tema][randomTema].preguntasrespuestaexpliacion[randomPregunta][2];
+
 		var texto = "";
 
 		switch(tema){
@@ -186,8 +191,9 @@ const RetoIntent = {
 			break;
 		}
 
+		contador += 1;
 		return handlerInput.responseBuilder
-			.speak(pregunta1)
+			.speak(`<speak>${texto} <break time="2s"/> ${pregunta}</speak>`)
 			.reprompt('copio copio')
 			.getResponse();
 	}
@@ -202,7 +208,7 @@ const RespuestaMatematicasPrimariaIntent = {
 
 		const speechText = 'Epa epa ¿eso que quiere decir?';
 		const request = handlerInput.requestEnvelope.request;
-		
+
 		return handlerInput.responseBuilder
 			.speak(speechText)
 			.reprompt('continuan las pregutntas')
