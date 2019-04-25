@@ -5,6 +5,7 @@ var informacion; //= require('./somefile.json')
 var teacher = null;
 var respuestaCorrecta = null;
 var explicacion = null;
+var explicacionFinal = [];
 var contador = 0;
 const Aprender = require('./aprenderHandler.js');
 const myDocument = require('./main.json');
@@ -161,9 +162,9 @@ const RetoIntent = {
 		const request = handlerInput.requestEnvelope.request;
 
 		var tema = request.intent.slots.tema.resolutions.resolutionsPerAuthority[0].values[0].value.id;
-		var nivel = request.intent.slots.nivel.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+		var nivel = request.intent.slots.nivel.resolutions.resolutionsPerAuthority[0].values[0].value.id;
 
-		var informacion = require(`./nivel/primaria.json`);
+		var informacion = require(`./nivel/${nivel}.json`);
 
 		var randomTema = Math.floor(Math.random() * 3 );
 		var randomPregunta = Math.floor(Math.random() * 3 );
@@ -205,12 +206,19 @@ const RespuestaMatematicasPrimariaIntent = {
 			&& handlerInput.requestEnvelope.request.intent.name === 'RespuestaMatematicasPrimariaIntent';
 	},
 	handle(handlerInput) {
-
-		const speechText = 'Epa epa ¿eso que quiere decir?';
+		if (contador === 0) 
+			return 'Epa epa ¿eso que quiere decir?';
+		
 		const request = handlerInput.requestEnvelope.request;
-
+		let myResponse = '';
+		let sino = request.intent.slots.sino.value;
+		let number = request.intent.slots.number.value;
+		if(sino)
+			myResponse += sino;
+		if(number)
+			myResponse += number;
 		return handlerInput.responseBuilder
-			.speak(speechText)
+			.speak(myResponse)
 			.reprompt('continuan las pregutntas')
 			.getResponse();
 	}
