@@ -76,10 +76,15 @@ const RetoIntent = {
 
 		var tema = request.intent.slots.tema.resolutions.resolutionsPerAuthority[0].values[0].value.name;
 		var nivel = request.intent.slots.nivel.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+
+		informacion = require(`./nivel/primaria.json`);
+		console.log(informacion);
+
 		let texto = "";
 		switch(tema){
 			case "Matemáticas":
-				texto = "Uyyy las Matemáticas son algo dificiles, pero esta bien, confio en ti"
+				texto = "Uuuy las Matemáticas son algo difíciles, pero está bien, confio en ti"
+				pregunta1 = request.intent.slots.tema.resolutions.resolutionsPerAuthority[0].values[0].value.name;
 			break;
 			case "Geografia":
 				texto = "Espero que no nos perdamos dentro del Universo"
@@ -89,6 +94,8 @@ const RetoIntent = {
 			break;
 			default:
 		}
+
+
 
 		return handlerInput.responseBuilder
 			.speak(texto)
