@@ -22,9 +22,9 @@
                 "titulo":"Multiplicación",
                 "catedra":"Si tenemos operaciones como cinco por doce, podemos hacer primero cinco por diez que es cincuenta y depues sumarle los otros dos cinco",
                 "preguntas-respuesta-expliacion":[
-                    ["Cuanto es 7 por 12","84","Recuerda siete por dies y cuatr"],
-                    ["Cuanto es 5 por 12","40","Recuerda cinco por dies es cinccuenta y le sumamos los otros tres sietes"],
-                    ["Cuanto es 4 por 12","48","Recuerda siete por diez setenta y le sumamos los otros tres sietes"],
+                    ["Cuanto es 7 por 12","84","Recuerda siete por diez es setenta y le sumas cuatro veces siete"],
+                    ["Cuanto es 5 por 12","40","Recuerda cinco por diez es cincuenta y le sumamos los otros dos cinco"],
+                    ["Cuanto es 4 por 12","48","Recuerda cuatro por diez es cuarenta y le sumamos los otros dos cuatro"],
                 ]
             },
             {   
