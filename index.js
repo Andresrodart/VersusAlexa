@@ -20,9 +20,9 @@ const LaunchRequestHandler = {
 };
 
 const AprendeIntent = {
-<<<<<<< HEAD
+
 	canHandle(handlerInput){
-		return  handlerInput.requestEnvelope.request.type === 'IntentRequest' 
+		return  handlerInput.requestEnvelope.request.type === 'IntentRequest'
 		&& handlerInput.requestEnvelope.request.intent.name === 'AprendeIntent';
 	},
 	handle(handlerInput) {
@@ -38,11 +38,11 @@ const AprendeIntent = {
 			.reprompt('Quieres saber un poco más de información di continuar o no continuar')
 			.getResponse();
 	}
-} 
+}
 
 const ContinuarIntent = {
 	canHandle(handlerInput){
-		return  handlerInput.requestEnvelope.request.type === 'IntentRequest' 
+		return  handlerInput.requestEnvelope.request.type === 'IntentRequest'
 		&& handlerInput.requestEnvelope.request.intent.name === 'ContinuarIntent';
 	},
 	handle(handlerInput) {
@@ -66,22 +66,22 @@ const ContinuarIntent = {
 
 const RetoIntent = {
 	canHandle(handlerInput){
-		return  handlerInput.requestEnvelope.request.type === 'IntentRequest' 
+		return  handlerInput.requestEnvelope.request.type === 'IntentRequest'
 		&& handlerInput.requestEnvelope.request.intent.name === 'RetoIntent';
 	},
 	handle(handlerInput) {
 		const request = handlerInput.requestEnvelope.request;
-		
+
 		//var tema = request.intent.slots.tema.resolutions.resolutionsPerAuthority[0].values[0].value.name;
 		//var nivel = request.intent.slots.nivel.resolutions.resolutionsPerAuthority[0].values[0].value.name;
-	  
+
 		return handlerInput.responseBuilder
 			.speak('aqui me retas')
 			.reprompt('aqui me retas')
 			.getResponse();
 	}
-} 
-=======
+}
+
     canHandle(handlerInput){
         return  handlerInput.requestEnvelope.request.type === 'IntentRequest'
         && handlerInput.requestEnvelope.request.intent.name === 'AprendeIntent';
