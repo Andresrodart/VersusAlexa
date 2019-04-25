@@ -96,7 +96,7 @@ const ContinuarIntent = {
 	handle(handlerInput) {
 		const request = handlerInput.requestEnvelope.request;
 		let Qcontinuar = request.intent.slots.continuar.value;
-		let myResponse = 'Hosuton no hizimos nada';
+		let myResponse = 'Hosuton no hicimos nada';
 		let myImg = '';
 	   if(teacher !== null){
 		   if (Qcontinuar.toLowerCase() === 'continuar') {
@@ -105,6 +105,17 @@ const ContinuarIntent = {
 			}else{
 				teacher = null;
 				myResponse = 'Muy bien padawan hemos terminado por hoy';
+				return handlerInput.responseBuilder
+					.speak(myResponse)
+					.reprompt('¿Quieres jugar o retarme?')
+					.addDirective({
+						type: 'Alexa.Presentation.APL.RenderDocument',
+						token: '[SkillProvidedToken]',
+						version: '1.0',
+						document: myDocument,
+						datasources: {}
+					})
+					.getResponse();
 			}
 	   }else{
 			myResponse = 'Aun no tenemos nada pausado para continuar';
