@@ -58,6 +58,10 @@
                     "name": "AprendeIntent",
                     "slots": [
                         {
+                            "name": "continuar",
+                            "type": "Continuar"
+                        },
+                        {
                             "name": "tema",
                             "type": "TemasEducativos",
                             "samples": [
@@ -69,11 +73,13 @@
                         },
                         {
                             "name": "nivel",
-                            "type": "NivelDeEducacion"
-                        },
-                        {
-                            "name": "continuar",
-                            "type": "Continuar"
+                            "type": "NivelDeEducacion",
+                            "samples": [
+                                "de {nivel}",
+                                "Quiero {nivel}",
+                                "{nivel}",
+                                "Si para {nivel}"
+                            ]
                         }
                     ],
                     "samples": [
@@ -194,6 +200,13 @@
                     "prompts": {},
                     "slots": [
                         {
+                            "name": "continuar",
+                            "type": "Continuar",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
                             "name": "tema",
                             "type": "TemasEducativos",
                             "confirmationRequired": false,
@@ -205,16 +218,12 @@
                         {
                             "name": "nivel",
                             "type": "NivelDeEducacion",
-                            "confirmationRequired": false,
-                            "elicitationRequired": false,
-                            "prompts": {}
-                        },
-                        {
-                            "name": "continuar",
-                            "type": "Continuar",
-                            "confirmationRequired": false,
-                            "elicitationRequired": false,
-                            "prompts": {}
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.44586463393.1168650882148",
+                                "elicitation": "Elicit.Slot.185495927227.394135100489"
+                            }
                         }
                     ]
                 },
@@ -269,6 +278,24 @@
                     {
                         "type": "PlainText",
                         "value": "Oye, no tan rapido ¿con qué tema quieres empezar?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.185495927227.394135100489",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "No me has dicho un nivel carnal, ¿vienes truchas como para primaria o secundaria?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.44586463393.1168650882148",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Perdona, no te entedí. Mejor sólo dime primaria o secundaria"
                     }
                 ]
             }
