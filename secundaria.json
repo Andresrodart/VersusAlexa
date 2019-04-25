@@ -1,0 +1,62 @@
+{
+    "Historia de Mexico":[
+        {   
+            "titulo":"Revolucion Mexicana",
+            "catedra":"Me pone triste recordarlo, pero tienes que saber esto: la Revolución Mexicana fue un conflicto armado muy pero muy violento dentro de nuestra historia, inició para quitar del poder al presidente Porfirio Díaz el cual llevaba más de 30 años en el poder, al final terminó siendo una guerra civil que buscaba un cambio total en la política mexicana. Temo decirte que hubieron más de un millón de muertos en este periodo, pero gracias a ello se lograron muchos cambios dentro de la política predominando la justicia dentro de nuestra democracia para todos los mexicanos",
+            "preguntasrespuestaexpliacion":[
+                ["¿Qué presidente fue el motivo para iniciar la revolución?","Porfirio Díaz","Porfirio Díaz, porque estuvo tanto mucho tiempo en la presidencia y a eso se le llama dictadura. |Qué horrible!"],
+                ["¿Cuántos muertos hubo en la revolución mexicana?","Un Millón","Hubo más de un millón de muertos"],
+                ["¿Qué beneficios trajo la revolución al país?","Justicia","La justicia fue por lo que miles de mexicanos lucharon hace muchos años. Un final feliz ¿No crees?"]
+            ]
+        },
+        {
+            "titulo":"Conquista",
+            "catedra":"La conquista de México fue un periodo en donde lamentablemente hubo muchos asesinatos, casi perdimos una de las culturas más impresionantes de la humanidad y además se destruyeron muchos edificios arquitectónicos importantes. Este curioso viaje empieza cuando Cristóbal Colón descubrió América en 1492, posteriormente vino Hernán Cortés desde españa a conquistarnos, pero te preguntarás ¿Porqué los aztecas no pudieron defenderse? Pues resulta que confundieron a los españoles sus dioses en lugar de atacarlos les ofrecieron maravillosas ofrendas, esto ocasionó que bajarán la guardia y una noche conocida como la “Noche triste” los españoles atacaron y exterminaron a miles de aztecas en la noche, al largarse remataron a la población restante con enfermedades. las cuales nunca habían experimentado como la Varicela.",
+            "preguntasrespuestaexpliacion":[
+                ["¿En qué año Cristóbal Colón descubrió América?","1492","En 1492 después de haber atravesado el océano Atlántico."],
+                ["¿Nombre de la noche en donde los españoles atacaron a los aztecas?","La noche triste","La noche triste es uno de las peores tragedias que hemos tenido la humanidad, pensar en lo que sucedió en Tenochtitlan esa noche me eriza la piel."],
+                ["¿Quién conquistó América?","Hernán cortés","El Abusivo Hernán cortés, fue la persona que arruinó la mayoría de las civilizaciones antiguas en México."]
+            ]
+        },
+        {
+            "titulo":"Independencia",
+            "catedra":"Es Fabuloso que que cada país a través de los años pueda independizarse con el tiempo de otro en este caso, México vivió bajo un virreinato de España por casi 300 años, durante este tiempo la población mexicana vivió una terrible discriminación de los nativos españoles los cuales abusaban de los recursos, cultura y personas. Este descontento disparó un enorme movimiento armado de la población entre los años 1808 y 1810. Finalmente en el famoso grito Dolores empezó la famosa guerra de independencia. Hubo muchos personajes importantes en este movimiento cada uno aporto cosas importantes como Agustín de Iturbide, José María Morelos y Josefa Ortiz de Dominguez. Este movimiento finalizó el año en 1821, año en que se firmó el acta de independencia del imperio mexicano.",
+            "preguntasrespuestaexpliacion":[
+                ["¿En qué año se independiza México?","1821","Con una maravillosa victoria se firma en 1821 el acta de independencia del imperio mexicano"],
+                ["¿Por cuántos años aproximadamente México vivió en un virreinato?","300","Aproximadamente ¡3 siglos! No puedo imaginarme todo lo que perdimos en ese tiempo en verdad me hubiera encantado haber conocido a profundidad la cultura mexica"],
+                ["¿Qué dio inicio a la guerra de independencia?","El grito de dolores","El famosisimo grito de Dolores motivó a miles de Mexicanos a levantarse en armas contra los españoles e iniciar el movimiento de independencia de México. ¡Wow! Que emotivo"]
+            ]
+        }
+    ],
+    
+    
+    "Matematicas":[
+            {   
+                "titulo":"Multiplicacion",
+                "catedra":"Sí tenemos operaciones como cinco por doce, podemos hacer primero cinco por diez que es cincuenta y después sumarle los otros dos cinco",
+                "preguntasrespuestaexpliacion":[
+                    ["¿Cuánto es 7 por 12?",84,"Recuerda siete por diez es setenta y le sumas cuatro veces siete"],
+                    ["¿Cuánto es 5 por 12?",40,"Recuerda cinco por diez es cincuenta y le sumamos los otros dos cinco"],
+                    ["¿Cuánto es 4 por 12?",48,"Recuerda cuatro por diez es cuarenta y le sumamos los otros dos cuatro"]
+                ]
+            },
+            {   
+                "titulo":"Trigonometria",
+                "catedra":"Tenemos tres triángulos importantes en la trigonometría que son el triángulo equilátero con sus tres lados iguales, el triangulo isósceles con dos lados iguales y el triángulo rectángulo sin ningún lado igual",
+                "preguntasrespuestaexpliacion":[
+                    ["¿Cuántos lados iguales tiene el triángulo equilatero?",3,"Buu, recuerda tiene tres lados"],
+                    ["¿Cuántos lados iguales tiene el triángulo isoseles?",2,"Casi!, tiene solo dos"],
+                    ["¿Cuántos lados tiene el triángulo rectángulo?", 0, "Caíste!, el triángulo rectángulo no tiene ningún lado igual"]
+                ]
+            },
+            {
+                "titulo":"Historia de las Matematicas",
+                "catedra":"¡La historia de las matemáticas es maravillosa! ya que están en todas partes. Los egipcios fueron una de las primeras civilizaciones en implementarlas en su día a día. Ahora bien, el otro dia escuche a un grupo de investigadores mexicanos decir que los mayas fueron los primeros en utilizar un sistema numérico con el número cero, que locura.",
+                "preguntasrespuestaexpliacion":[
+                    ["¿Qué civilización utilizó por primera vez el número cero?","Los Mayas","Los mayas son los buenasos recuerdalo"],
+                    ["¿Qué civilización fue la primera en utilizar las matematicas en su día a día?","Los Egipcios","Los egipcios parecen de otro mundo"],
+                    ["¿Las matemáticas estan en talent land?","Si","Recuerdalo, estan en todos lados, hasta en su corazón"]
+                ]
+            }
+        ]
+}
