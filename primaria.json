@@ -10,12 +10,21 @@
             ]
         },
         {
-            "titulo":"Historia de las Matematicas",
-            "catedra":"¡La historia de las matemáticas es maravillosa! ya que están en todas partes. Los egipcios fueron una de las primeras civilizaciones en implementarlas en su día a día. Ahora bien, el otro dia escuche a un grupo de investigadores mexicanos decir que los mayas fueron los primeros en utilizar un sistema numérico con el número cero, que locura.",
+            "titulo":"Capitales",
+            "catedra":"Si pudiera decirte que es lo que me encantado en la vida es haber viajado a casi todos los países del mundo, a través del internet. Mi primera experiencia fue haber visitado Washington D.C. la capital de Estados Unidos haber conocido la casa blanca, al presidente  Donald Trump y el Monumento a Abraham Lincoln. Después cruce la frontera para conocer la Ciudad de México la capital de México y dejame contarte que es la mas bonita de todas, ya que la gente es muy amigable y tienen mucha cultura. Ahora, donde me sentí como en casa fue en Tokio la capital de japón porque toda la ciudad estaba llena de tecnología, y lo que más disfrute fue jugar videojuegos y ver caricaturas en este país.",
             "preguntas-respuesta-expliacion":[
-                ["¿Qué civilización utilizó por primera vez el número cero?","Los Mayas","Los mayas son los buenasos recuerdalo"],
-                ["¿Qué civilización fue la primera en utilizar las matematicas en su día a día?","Los Egipcios","Los egipcios parecen de otro mundo"],
-                ["¿Las matemáticas estan en talent land?","Si","Recuerdalo, estan en todos lados, menos en su corazón"]
+                ["¿En que estado se encuentra la casa blanca?","Washington","En Washington la capital de estados unidos"],
+                ["¿Cuál es la capital de México?","México","Ahhh... Ciudad de México. Tan solo recordar sus tacos y gente me hace sentirme tan feliz"],
+                ["¿Que capital está llena de tecnología?","Tokio","Tokio, la cultura de este país me encanta son muy educados y además les encantan los videojuegos como a mí"]
+            ]
+        },
+        {
+            "titulo":"Continentes",
+            "catedra":"Platicarte de los continentes es algo fascinante porque son extensiones de tierra en nuestro planeta muy grandes y estos además contienen muchísimas personas y países. Aquí te puedo contar que en total existen 5 continentes, el más grande es el continente asiático, aquí puedes encontrar países con una cultura totalmente opuesta a la nuestra y entre los países más importantes se encuentran Japón, China y Corea. el más pequeño de todos es Australia, te puedo contar maravillas de este lugar pero no puedo dejar en pensar en los canguros que existen en Australia. Aquí además encontraremos una serie de países muy pequeños conformados por islas alrededor de australia. Europa es uno de los más populares por las grandes historias y monumentos que existen en cada país como en Francia, España e inglaterra. África Es muy especial para mí ya que aquí fue donde surgieron los seres humanos hace miles de años. Los paises que mas me encantaron fueron egipto con sus pirámides y Marruecos con sus hermosos desiertos. Por último está América, es un país con muchísima diversidad, naturaleza e historia. Aquí mi país favorito es México con sus playas y biodiversidad seguido de estados unidos el país donde nací.",
+            "preguntas-respuesta-expliacion":[
+                ["¿Cuántos continentes existen en el planeta?",5,"En total son 5 continentes, te los cuento: América, Asia, Europa, Oceania y Africa"],
+                ["¿Qué continente fue el último en descubrirse?","América","América fue el último país descubierto y recuerda que es especial para mí porque es donde me crearon."],
+                ["¿Cuál es el país más pequeño?","Oceanía","Oceanía es el es país más pequeño conformándose por Australia y algunas islas."]
             ]
         }
     ],
