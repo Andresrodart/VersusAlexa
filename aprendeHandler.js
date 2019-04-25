@@ -15,10 +15,10 @@ class Aprender {
 	}
 	inicial(){
 		let TemaADar = Math.floor(Math.random() * this.informacionLen);
-		let myResponse = `<speak> 
+		let myResponse = `<speak>
 					Vamos a empezar <break time="1s"/>.
 					Te contaré sobre <emphasis level="reduced">${this.informacion[this.tema][TemaADar].titulo}</emphasis> <break time="1s"/>.
-					${this.informacion[this.tema][TemaADar].catedra}. <break time="1s"/> 
+					${this.informacion[this.tema][TemaADar].catedra}. <break time="1s"/>
 					Quieres saber un poco más de información di continuar o no continuar
 				</speak>`;
 		let tempSubTema = this.informacion[this.tema][TemaADar];
@@ -26,28 +26,28 @@ class Aprender {
 		this.informacion[this.tema][TemaADar] = lastSubTema;
 		this.informacion[this.tema][this.informacionLen - 1] = tempSubTema;
 		this.informacionLen--;
-		
+
 		return myResponse;
 	}
 	continuar(){
 		if (this.informacionLen <= 0)
-			return `<speak> 
+			return `<speak>
 						Ya te he enseñado todo lo que se de ${this.tema}
 					</speak>`;
 		else if (this.informacionLen === 1){
 			this.informacionLen--;
-			return `<speak> 
+			return `<speak>
 					Por último padawan <break time="1s"/>.
 					Hablaré sobre <emphasis level="reduced">${this.informacion[this.tema][0].titulo}</emphasis> <break time="1s"/>.
-					${this.informacion[this.tema][0].catedra}. <break time="1s"/> 
+					${this.informacion[this.tema][0].catedra}. <break time="1s"/>
 					Quieres saber un poco más de información di continuar o no continuar
 				</speak>`;
 		}
 		let TemaADar = Math.floor(Math.random() * this.informacionLen);
-		let myResponse = `<speak> 
+		let myResponse = `<speak>
 					Siguiente tema padawan <break time="1s"/>.
 					Hablaré sobre <emphasis level="reduced">${this.informacion[this.tema][TemaADar].titulo}</emphasis> <break time="1s"/>.
-					${this.informacion[this.tema][TemaADar].catedra}. <break time="1s"/> 
+					${this.informacion[this.tema][TemaADar].catedra}. <break time="1s"/>
 					Quieres saber un poco más de información di continuar o no continuar
 				</speak>`;
 		let tempSubTema = this.informacion[this.tema][TemaADar];
@@ -55,7 +55,7 @@ class Aprender {
 		this.informacion[this.tema][TemaADar] = lastSubTema;
 		this.informacion[this.tema][this.informacionLen - 1] = tempSubTema;
 		this.informacionLen--;
-		
+
 		return myResponse;
 	}
 }

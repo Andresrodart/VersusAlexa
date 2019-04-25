@@ -112,7 +112,7 @@ const ContinuarIntent = {
 			myImg = "https://i.pinimg.com/originals/52/83/4f/52834f21d1c9b62f0ef83244a4830b07.png";
 		else
 			myImg = "http://sesgo.org/images/benito-juarez-portada.jpg";
-		
+
 		return handlerInput.responseBuilder
 			.speak(myResponse)
 			.reprompt(myResponse)
@@ -162,7 +162,10 @@ const RetoIntent = {
 		var nivel = request.intent.slots.nivel.resolutions.resolutionsPerAuthority[0].values[0].value.name;
 
 		var informacion = require(`./nivel/primaria.json`);
-		var pregunta1 = informacion[tema][0].preguntasrespuestaexpliacion[0][0];
+
+		var randomTema = Math.floor(Math.random() * informacion[tema].length );
+
+		var pregunta1 = informacion[tema][randomTema].preguntasrespuestaexpliacion[0][0];
 		var texto = "";
 
 		switch(tema){
