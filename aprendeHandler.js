@@ -7,14 +7,16 @@ class Aprender {
 		this.temasDados = [];
 	}
 	maquinaDeEstados(){
-		var response;
 		if (this.estado === 'inicial')
 			return this.inicial();
 	}
 	inicial(){
+		let TemaADar = Math.floor(Math.random() * this.informacion[this.tema].length);
+		this.temasDados.push(TemaADar);
 		return `<speak> 
-					Vamos a empezar <break time="3s"/>.
-					<emphasis level="strong">${this.informacion[this.tema].catedra}</emphasis>  
+					Vamos a empezar <break time="2s"/>.
+					Te contaré sobre <emphasis level="moderate">${this.informacion[this.tema][TemaADar].titulo}</emphasis>
+					${this.informacion[this.tema][TemaADar].catedra} 
 				</speak>`
 	}
 }
