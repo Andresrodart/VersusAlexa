@@ -27,19 +27,11 @@ const AprendeIntent = {
     handle(handlerInput) {
         const request = handlerInput.requestEnvelope.request;
         let myResponse = "Houston hubo un problema";
-        try {
-            if (teacher === null) {
                 var tema = request.intent.slots.tema.resolutions.resolutionsPerAuthority[0].values[0].value.id;
                 var nivel = request.intent.slots.nivel.resolutions.resolutionsPerAuthority[0].values[0].value.name;
                 informacion = require(`./nivel/${nivel}.json`);
                 teacher = new Aprender(nivel, tema, informacion);
                 myResponse = teacher.maquinaDeEstados();
-            } else if ( request.request.intent.slots.continuar !== null){
-                myResponse = 'quiero continuar';
-            }
-        } catch (error) {
-            myResponse = "Houston hubo un erro";
-        }
         return handlerInput.responseBuilder
             .speak(myResponse)
             .reprompt(myResponse)
