@@ -27,11 +27,11 @@ const AprendeIntent = {
 	handle(handlerInput) {
 		const request = handlerInput.requestEnvelope.request;
 		let myResponse = "Houston hubo un problema";
-		var tema = request.intent.slots.tema.resolutions.resolutionsPerAuthority[0].values[0].value.id;
-		var nivel = request.intent.slots.nivel.resolutions.resolutionsPerAuthority[0].values[0].value.name;
-		informacion = require(`./nivel/${nivel}.json`);
-		teacher = new Aprender(nivel, tema, informacion);
-		myResponse = teacher.maquinaDeEstados();
+				var tema = request.intent.slots.tema.resolutions.resolutionsPerAuthority[0].values[0].value.id;
+				var nivel = request.intent.slots.nivel.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+				informacion = require(`./nivel/${nivel}.json`);
+				teacher = new Aprender(nivel, tema, informacion);
+				myResponse = teacher.maquinaDeEstados();
 		return handlerInput.responseBuilder
 			.speak(myResponse)
 			.reprompt('Quieres saber un poco más de información di continuar o no continuar')
@@ -78,21 +78,25 @@ const RetoIntent = {
 		var nivel = request.intent.slots.nivel.resolutions.resolutionsPerAuthority[0].values[0].value.name;
 
 		informacion = require(`./nivel/primaria.json`);
-		console.log(informacion);
-
-		let texto = "";
+		var pregunta1 = ""
+		var texto = "";
+		
 		switch(tema){
 			case "Matemáticas":
-				texto = "Uuuy las Matemáticas son algo difíciles, pero está bien, confio en ti"
-				pregunta1 = request.intent.slots.tema.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+				texto = "Uuuy las Matemáticas son algo difíciles, pero está bien, confio en ti";
+				pregunta1 = informacion[tema][0].preguntas-respuesta-expliacion[0][0];
 			break;
+			
 			case "Geografia":
 				texto = "Espero que no nos perdamos dentro del Universo"
 			break;
+			
 			case "Historia":
 				texto = "Bien, es hora de viajar en el tiempo"
 			break;
+			
 			default:
+			break;
 		}
 
 
