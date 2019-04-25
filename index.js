@@ -79,10 +79,10 @@ const RetoIntent = {
 		let texto = "";
 		switch(tema){
 			case "Matemáticas":
-				texto = "Uy las matematicas son un dificiles"
+				texto = "Uyyy las Matemáticas son algo dificiles, pero esta bien, confio en ti"
 			break;
 			case "Geografia":
-				texto = "Esperemos no perdernos dentro del espacio tiempo"
+				texto = "Espero que no nos perdamos dentro del Universo"
 			break;
 			case "Historia":
 				texto = "Bien, es hora de viajar en el tiempo"
@@ -90,10 +90,9 @@ const RetoIntent = {
 			default:
 		}
 
-
 		return handlerInput.responseBuilder
 			.speak(texto)
-			.reprompt('NO SE QUE ES REPROMTsadfasd')
+			.reprompt('copio copio')
 			.getResponse();
 	}
 }
