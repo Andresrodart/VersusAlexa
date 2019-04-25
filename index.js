@@ -175,7 +175,7 @@ const RetoIntent = {
 		var texto = "";
 
 		switch(tema){
-			case "Matemáticas":
+			case "Matematicas":
 				texto = "Uuuy las Matemáticas son algo difíciles, pero está bien, confio en ti";
 			break;
 
