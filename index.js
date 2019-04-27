@@ -10,7 +10,7 @@ var contador = 0;
 const Aprender = require('./aprenderHandler.js');
 const myDocument = require('./main.json');
 const Alexa = require('ask-sdk-core');
-const WelcomeDialogs = ["Hola, no te interesa jugar lif of leyends, este es un juego, aaah no te creas, ¿quieres jugar o aprender?",'¿Estás aquí para retarme, o estas aquí para recibir lecciones de la maestra Alexa?', '¿Acaso tu Kunfu es más fuerte, o quieres entrenar?', 'Vaya, veo que hay un retador entre nosotros, ¿estas listo o necesitas ayuda?'];
+const WelcomeDialogs = ["Hola, no te interesa jugar lif of leyends, este es un juego, aaah no te creas, ¿Quieres jugar o aprender?",'¿Estás aquí para retarme, o estas aquí para recibir lecciones de la maestra Alexa?', '¿Acaso tu Kunfu es más fuerte, o quieres entrenar?', 'Vaya, veo que hay un retador entre nosotros, ¿estas listo o necesitas ayuda?'];
 const LaunchRequestHandler = {
 	canHandle(handlerInput) {
 		return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
@@ -212,7 +212,7 @@ const RespuestaMatematicasPrimariaIntent = {
 				.speak('Epa epa ¿eso que quiere decir? ¿Quieres entrenar o retarme?')
 				.reprompt('¿Quieres entrenar o retarme?')
 				.getResponse();
-		
+
 		const request = handlerInput.requestEnvelope.request;
 		let myResponse = '';
 		let sino = request.intent.slots.sino.value;
